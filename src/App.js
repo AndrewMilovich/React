@@ -1,16 +1,10 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Users from "./components/Users/Users";
-import Posts from "./components/Posts/Posts";
-import Comments from "./components/Comments/Comments";
+import Spaces from "./components/Spaces/spaces";
 function App() {
     return (
-        <div className={'wrap'}>
-            <div className={'UserPost'}>
-                <Users/>
-                <Posts/>
-            </div>
-               <Comments/>
+        <div >
+<Spaces/>
         </div>
     );
 }
