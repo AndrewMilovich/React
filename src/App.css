@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+
+.Posts {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Users {
+    width: 30%;
+    justify-content: center;
+}
+.User:hover{
+    cursor: pointer;
+    background-color: #9898c9;
+    transition: .1s;
+}
+.Post:hover{
+    cursor: pointer;
+    background-color: #9898c9;
+    transition: .1s;
+}
+.Comment{
+    border-radius: 10px;
+    width: 18%;
+    background-color: yellow;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    margin: 5px;
+    align-items: center;
+    text-align: center;
+    height: auto;
+}
+.Comments{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Post {
+    border-radius: 10px;
+    width: 18%;
+    background-color: yellow;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    margin: 5px;
+    align-items: center;
+    text-align: center;
+    height: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.User {
+
+    background-color: yellow;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    margin: 5px;
+    align-items: center;
+    text-align: center;
+    height: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.UserPost {
+    display: flex;
 }
