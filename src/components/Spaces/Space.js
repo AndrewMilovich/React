@@ -8,7 +8,7 @@ const Space = (props) => {
             <h3>{flight_number}</h3>
             <h2>{mission_name}</h2>
             <p>{launch_year}</p>
-            <img src ={mission_patch_small}/>
+            <img src ={mission_patch_small} alt={'icon launch'}/>
 
         </div>
     );
