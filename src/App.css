@@ -1,36 +1,57 @@
-.User {
+.wrap{
     display: flex;
-    justify-content: space-between;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
 }
-
-.block {
+.Users{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-
 .infoUser {
     border: 1px solid black;
     border-radius: 10px;
     margin: 10px;
     align-items: center;
-    width: 50%;
+    width: 70%;
+    height: 300px;
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column;
     align-content: center;
-}
 
-.buttonUser {
-    display: flex;
 }
-
 .buttonPost {
     margin-left: 20px;
 }
 
 .userBlock {
-    width: 70%;
+    width: 25%;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.post{
+    height: 260px;
+    margin: 5px;
+    width: 18%;
+    border:1px solid black;
+    border-radius: 10px;
+}
+.postBlock{
+    justify-content: center;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
 }

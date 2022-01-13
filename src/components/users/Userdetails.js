@@ -1,13 +1,10 @@
 import React from 'react';
 
 const UserDetails = ({
-    details:{name,username,email,city,street,suite,zipcode,phone}
+    details:{id,name,username,email,address:{city,street,suite,zipcode},phone},getPostId
                      }) => {
     return (
-        <div>
-
             <div className={'infoUser'}>
-
                 <div><h2>{name} {username}</h2>
                     <h3>{email}</h3></div>
                 Address:
@@ -18,10 +15,7 @@ const UserDetails = ({
                     <li>{zipcode}</li>
                     <li>{phone}</li>
                 </ul>
-
-            </div>
-
-
+                <button onClick={()=>getPostId(id)}> get Post</button>
         </div>
     );
 };
