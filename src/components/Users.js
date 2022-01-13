@@ -8,7 +8,6 @@ function escapeRegExp(string){
 }
 const Users = () => {
 
-    
     const [users,setUsers]=useState([])
     useEffect(()=>{
         userService.getAllUsers()
@@ -16,16 +15,19 @@ const Users = () => {
     },[])
     return (
         <div>
-            <form action="">
-                Name:<input  type="text"  placeholder={'NAme'}/>
-                UserName: <input type="text"placeholder={'UserName'}/>
-                Email:  <input type="text"placeholder={'Email'}/>
-                <button onClick={event => {event.preventDefault() ;a()  }}>Find</button>
+            <form onSubmit={a}>
+                Name:<input  type="text" name={'name'} placeholder={'NAme'}/>
+                UserName: <input type="text" name={'username'} placeholder={'UserName'}/>
+                Email:  <input type="text" name={'email'} placeholder={'Email'}/>
+                <button >Find</button>
                <div className={'Users'}> {users.map(value => <User key={value.id} user={value}/>)}</div>
 
             </form>
         </div>
     );
 };
-
+const a = (e) => {
+    e.preventDefault()
+    console.log(e.target.name.value,e.target.username.value,e.target.email.value)
+}
 export default Users;
