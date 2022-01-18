@@ -11,17 +11,17 @@ const Form = ({update}) => {
         resolver: joiResolver(CarValidator),
         mode: 'onTouched'
     });
-const deleteCar=(e,id)=>{
-    e.preventDefault()
-    carService.deleteById(id).then(value => value.data.delete)
-    }
+    // const deleteCar = (id) => {
+    //
+    //     carService.deleteById(id).then(value => value.data.delete)
+    // }
     const submit = (car) => {
-    try{
-        const newCar= carService.create(car)
-        update(newCar)
-    }catch (error){
-        setFormError(error.response.data)
-    }
+        try {
+            const newCar = carService.create(car)
+            update(newCar)
+        } catch (error) {
+            setFormError(error.response.data)
+        }
     }
 // watch(event=>console.log(event))
     return (
@@ -37,8 +37,14 @@ const deleteCar=(e,id)=>{
                 {/*{formError.year && <span>{formError.year[0]}</span>}*/}
                 {errors.year && <span>{errors.year.message}</span>}
                 <button>Save</button>
-<button>delete</button>
+
             </form>
+
+
+            {/*<form onSubmit={handleSubmit(deleteCar)}>*/}
+            {/*    <div><label>id:<input type="number" defaultValue={''} {...register('id')}/></label></div>*/}
+            {/*    <button>delete</button>*/}
+            {/*</form>*/}
         </div>
     );
 };
