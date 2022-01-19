@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 
-
-
-const User = ({user}) => {
+import UserDetails from "../UserDetails/UserDetails";
+const User = ({user, getUser}) => {
     const {id, name} = user
 
     return (
@@ -12,7 +11,8 @@ const User = ({user}) => {
                 <div>Id:{id}</div>
                 <Link to={id.toString()} state={user}>{name}</Link>
             </div>
-
+            <button onClick={() => getUser(user)}>details</button>
+            {<UserDetails getUser={getUser} user={user}/>}
         </div>
     );
 };
