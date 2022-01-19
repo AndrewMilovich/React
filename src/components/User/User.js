@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 
+
+
 const User = ({user}) => {
-    const {id,name}= user
+    const {id, name} = user
+
     return (
         <div>
-            <div>Id:{id}</div>
-            <Link to={id.toString()} state={user}>{name}</Link>
+            <div>
+                <div>Id:{id}</div>
+                <Link to={id.toString()} state={user}>{name}</Link>
+            </div>
+
         </div>
     );
 };
