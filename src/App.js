@@ -16,7 +16,6 @@ function App() {
                 <Route path={'/'} element={<Layout/>}>
                     <Route index={'/'} element={<HomePage/>}/>
                     <Route path={'users'} element={<UsersPage/>}/>
-                    <Route path={'users/:id'} element={<UserDetails/>}/>
                     <Route path={'posts'} element={<PostsPage/>}/>
                     <Route path={'posts/:id'} element={<SinglePostPage/>}/>
                     <Route path={'*'} element={<NotFoundPage/>}/>

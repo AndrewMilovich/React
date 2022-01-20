@@ -11,7 +11,6 @@ const PostsPage = () => {
         <div>
             <h1>Posts</h1>
             {posts.map(post=> <Post key={post.id} post={post}  />)}
-            {}
         </div>
     );
 };

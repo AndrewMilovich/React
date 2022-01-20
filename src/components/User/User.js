@@ -1,18 +1,18 @@
-import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import './User.css'
 
-import UserDetails from "../UserDetails/UserDetails";
 const User = ({user, getUser}) => {
+
     const {id, name} = user
 
     return (
-        <div>
+        <div className={'activeUser'}>
             <div>
-                <div>Id:{id}</div>
-                <Link to={id.toString()} state={user}>{name}</Link>
+                <h2>Id:{id}</h2>
+                <h2>{name}</h2>
             </div>
+
             <button onClick={() => getUser(user)}>details</button>
-            {<UserDetails getUser={getUser} user={user}/>}
+
         </div>
     );
 };
