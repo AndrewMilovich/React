@@ -6,15 +6,16 @@ import './SinglePostPage.css'
 
 const SinglePostPage = () => {
     const {id} = useParams();
- const [post,setPost] = useState(null);
- const {state}=useLocation()
- useEffect(()=>{
-     if (state){
-         setPost(state)
-             return
-     }
-     postService.getById(id).then(value => setPost({...value}))
- },[])
+    const {state} = useLocation()
+    const [post, setPost] = useState(null);
+
+    useEffect(() => {
+        if (state) {
+            setPost(state)
+            return
+        }
+        postService.getById(id).then(value => setPost({...value}))
+    }, [])
 
     return (
         <div>

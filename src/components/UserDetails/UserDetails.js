@@ -1,9 +1,11 @@
 import './UserDetails.css'
-import {useState} from "react";
-import Post from "../Post/Post";
+import {Link, useLocation, useParams} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 
-const UserDetails = ({userDetails, getPostId}) => {
-    const [post, setPost] = useState(null)
+const UserDetails = () => {
+    const {id} = useParams()
+    console.log(id);
+    const {state: userDetails} = useLocation()
     return (
         <div>
             {userDetails && (
@@ -33,10 +35,9 @@ const UserDetails = ({userDetails, getPostId}) => {
                         </ul>
                     </div>
 
-                    <button onClick={() => getPostId(userDetails.id)}>Get Posts</button>
-
+                    <Link to={"posts"}>get post</Link>
+<Outlet/>
                 </div>
-
             )}
 
         </div>

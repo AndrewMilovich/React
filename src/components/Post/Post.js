@@ -1,7 +1,6 @@
 import React from 'react';
-
-
 import './Post.css'
+import {Link} from "react-router-dom";
 
 
 const Post = ({post}) => {
@@ -10,7 +9,7 @@ const Post = ({post}) => {
         <div className={'post'}>
 
                 <div>
-                    <div>Id:{id} </div>
+                    <Link to={id.toString()}>Id:{id} </Link>
                     <div>Title:{title}</div>
                 </div>
 
