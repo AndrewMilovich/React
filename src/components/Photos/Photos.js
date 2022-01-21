@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {albumService} from "../../service/album.service";
 import {useParams} from "react-router-dom";
+
+import {albumService} from "../../service/album.service";
 import Photo from "../Photo/Photo";
 
 const Photos = () => {

@@ -12,7 +12,6 @@ const Album = ({album}) => {
             <h1>userId:{userId}</h1>
             <h2>Id:{id}</h2>
             <h3>Title:{title}</h3>
-
             <Link to={`photos`}>
                 <button>Photos</button>
             </Link>
