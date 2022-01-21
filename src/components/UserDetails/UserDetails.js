@@ -1,13 +1,27 @@
-import './UserDetails.css'
 import {Link, useLocation, useParams} from "react-router-dom";
 import {Outlet} from "react-router-dom";
+import {useEffect, useState} from "react";
+
+import {userService} from "../../service/user.service";
+import './UserDetails.css'
 
 const UserDetails = () => {
+
     const {id} = useParams()
-    console.log(id);
-    const {state: userDetails} = useLocation()
+    const {state} = useLocation()
+
+    const [userDetails,setUserDetails] = useState(null);
+
+    useEffect(()=>{
+        if (state){
+            setUserDetails(state)
+            return;
+        }
+     userService.getById(id).then(value=>setUserDetails({...value}))
+    },[id])
+
     return (
-        <div>
+        <>
             {userDetails && (
                 <div className={'user'}>
                     <div className={'name'}><h2>Id:{userDetails.id}</h2>
@@ -33,14 +47,17 @@ const UserDetails = () => {
                             <li>catchPhrase:{userDetails.company.catchPhrase}</li>
                             <li>bs:{userDetails.company.bs}</li>
                         </ul>
+
+                        <Link to={'posts'}>
+                            <button>get post</button>
+                        </Link>
+
                     </div>
 
-                    <Link to={"posts"}>get post</Link>
-<Outlet/>
                 </div>
-            )}
-
-        </div>
+            ) }
+            <Outlet/>
+        </>
     );
 };
 

@@ -4,6 +4,8 @@ export default baseUrl;
 
 export const urls = {
     users:'/users',
+    albums:'/albums',
     posts:'/posts',
-    comments:'/comments'
+    comments:'/comments',
+    photos:'/photos'
 }

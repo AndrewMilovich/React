@@ -16,6 +16,10 @@ const User = ({user}) => {
                 <button>details</button>
             </Link>
 
+            <Link to={`${id}/albums`}>
+                <button>get album</button>
+            </Link>
+
         </div>
     );
 };

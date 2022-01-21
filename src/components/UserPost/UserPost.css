@@ -1,8 +1,9 @@
-.post{
-    text-align: center;
+.userPost {
     width: 18%;
     border: 1px solid black;
     margin: 5px;
     border-radius: 10px;
-    height: 100px;
+    padding: 5px;
+    text-align: center;
+    box-sizing: border-box;;
 }

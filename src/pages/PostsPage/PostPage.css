@@ -1,0 +1,13 @@
+.postPage{
+    display: flex;
+}
+.posts{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.postDetails{
+    width: 50%;
+    text-align: center;
+
+}
