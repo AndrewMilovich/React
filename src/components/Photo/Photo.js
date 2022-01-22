@@ -7,8 +7,8 @@ const Photo = ({photo}) => {
             <h2>albumId:{albumId}</h2>
             <h3>id:{id}</h3>
             <p>title:{title}</p>
-            <p>url:{url}</p>
-            <p>thumbnailUrl:{thumbnailUrl}</p>
+            url:<img src={url} alt="placehoder600"/>
+            thumbnailUrl:<img src={thumbnailUrl} alt="placehoder150"/>
         </div>
     );
 };
