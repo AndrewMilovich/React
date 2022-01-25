@@ -1,29 +1,40 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 
 import {carService} from "../../services/carService";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {CarValidator} from "../../validators/car.validator";
 
-const Form = ({update}) => {
+const Form = ({update,updateCar:{id,model,price,year}}) => {
+
     const [formError, setFormError] = useState({})
-    const {register, handleSubmit, watch, formState: {errors}} = useForm({
+
+    const {register, handleSubmit ,setValue, formState: {errors}} = useForm({
         resolver: joiResolver(CarValidator),
         mode: 'onTouched'
     });
-    // const deleteCar = (id) => {
-    //
-    //     carService.deleteById(id).then(value => value.data.delete)
-    // }
+useEffect(()=>{
+    setValue('model', model)
+    setValue('price', price)
+    setValue('year', year)
+},[id])
     const submit = (car) => {
         try {
-            const newCar = carService.create(car)
+            let newCar;
+            if (id) {
+                 newCar = carService.updateById(id, car)}
+            else {
+                newCar = carService.create(car)
+
+            }
             update(newCar)
-        } catch (error) {
+        }
+
+        catch (error) {
             setFormError(error.response.data)
         }
     }
-// watch(event=>console.log(event))
+
     return (
         <div>
             <form onSubmit={handleSubmit(submit)}>
@@ -36,15 +47,9 @@ const Form = ({update}) => {
                 <div><label>Year:<input type="text" defaultValue={''} {...register('year')}/></label></div>
                 {/*{formError.year && <span>{formError.year[0]}</span>}*/}
                 {errors.year && <span>{errors.year.message}</span>}
-                <button>Save</button>
-
+                <button> {id?'update':'save'} </button>
             </form>
 
-
-            {/*<form onSubmit={handleSubmit(deleteCar)}>*/}
-            {/*    <div><label>id:<input type="number" defaultValue={''} {...register('id')}/></label></div>*/}
-            {/*    <button>delete</button>*/}
-            {/*</form>*/}
         </div>
     );
 };
