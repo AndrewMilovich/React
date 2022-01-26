@@ -1,0 +1,15 @@
+.header{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    background-color: blue;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+.text{
+    color: snow;
+}
+body{
+    margin: 0;
+}
