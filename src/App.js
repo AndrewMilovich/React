@@ -4,8 +4,7 @@ import Reducer from "./components/Reducer";
 function App() {
     return (
         <div>
-<Reducer/>
-
+            <Reducer/>
         </div>
     );
 }
