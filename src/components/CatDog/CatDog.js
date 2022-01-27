@@ -18,9 +18,9 @@ const CatDog = () => {
             case actions.AddDog:
                 return {...state, dog: [...state.dog, action.payload]}
             case actions.DeleteCat:
-                return {...state, cat: state.cat.filter(cat => cat.id !== action.payload)}
+                return {...state, cat: state.cat.filter(cat => cat.id !== action.payload.id)}
             case actions.DeleteDog:
-                return {...state, dog: state.dog.filter(dog => dog.id !== action.payload)}
+                return {...state, dog: state.dog.filter(dog => dog.id !== action.payload.id)}
             default:
                 return {...state}
         }
