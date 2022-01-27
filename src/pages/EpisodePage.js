@@ -8,22 +8,24 @@ const EpisodePage = () => {
 
     const {id} = useParams();
     const [episodes, setEpisodes] = useState([])
-    const [info, setInfo] = useState([])
+
 
     useEffect(() => {
-        episodeService.getById(id).then(value => setEpisodes(value.results))
-            .then(value => setInfo(value.info))
+        episodeService.getById(id).then(value => setEpisodes([...value.results]))
     }, [id])
 
     return (
         <div>
             {episodes.map(episode => <Episode key={episode.id} episode={episode}/>)}
-            {info.map(info =>  info.count )}
-            <Link to={`/episodes/${+id + 1}`}>
-                <button>next</button>
-            </Link>
+
+
+
             <Link to={`/episodes/${+id -1}`}>
                 <button>prev</button>
+            </Link>
+
+            <Link to={`/episodes/${+id + 1}`}>
+                <button>next</button>
             </Link>
 
         </div>
