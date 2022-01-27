@@ -5,3 +5,7 @@
     margin: 20px;
     column-gap: 10px;
 }
+.animal{
+    display: flex;
+    justify-content: space-around;
+}
