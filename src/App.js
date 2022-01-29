@@ -15,7 +15,7 @@ function App() {
                 <Route path={'/'} element={<Layout/>}>
                     <Route index element={<Navigate to={'episodes/1'}/>}/>
                     <Route path={'episodes/:id'} element={<EpisodePage/>}/>
-                    <Route path={'episodeDetails'} element={<EpisodeDetailsPage/>}/>
+                    <Route path={'episodeDetails/:characterId'} element={<EpisodeDetailsPage/>}/>
                 </Route>
             </Routes>
         </div>

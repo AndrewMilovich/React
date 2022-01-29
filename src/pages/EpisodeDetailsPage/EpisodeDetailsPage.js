@@ -1,21 +1,22 @@
 import React, {useEffect, useState} from 'react';
+import { useParams} from "react-router-dom";
+
 import {charactersService} from "../../service/characters.service";
-import {useLocation, useParams} from "react-router-dom";
+import Characters from "../../components/Characters/Characters";
 
+const EpisodeDetailsPage = () => {
 
-const EpisodeDetailsPage = ({characterId}) => {
+  const  {characterId}=useParams()
+
+const[state,setState]=useState([])
+
     useEffect(()=>{
-        charactersService.getById(characterId).then(value => console.log(value))
-    },[characterId])
-    return (
-        <div>
+        charactersService.getById(characterId).then(value => setState([...value]))
+    },[])
 
-            {/*{ state &&(*/}
-            {/*<div>*/}
-            {/*{state.id}*/}
-            {/*{state.name}*/}
-            {/*</div>*/}
-            {/*)}*/}
+    return (
+        <div className={'characters'}>
+            {state.map(value => <Characters key={value.id} value={value} />)}
         </div>
     );
 };
