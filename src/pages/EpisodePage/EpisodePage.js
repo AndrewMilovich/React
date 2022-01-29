@@ -8,7 +8,9 @@ import './EpisodePage.css'
 const EpisodePage = () => {
 
     const {id} = useParams();
+
     const [episodes, setEpisodes] = useState([])
+
 
 
     useEffect(() => {
