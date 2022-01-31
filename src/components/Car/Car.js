@@ -16,6 +16,7 @@ const Car = ({car:{id,model,price,year}}) => {
             </div>
             <button onClick={()=>dispatch(deleteCar({id}))}>Delete</button>
             <button onClick={()=>dispatch(updateCar({id}))}>Update</button>
+            {console.log(id)}
         </div>
     );
 };

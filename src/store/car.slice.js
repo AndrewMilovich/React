@@ -18,7 +18,9 @@ const carSlice=createSlice({
         },
         updateCar:(state,action)=>{
 
-            state.cars.setValue( state.cars.model,'model')
+
+
+
         }
 
     }
