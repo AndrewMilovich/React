@@ -1,8 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import {charactersService} from "../../service/characters.service";
 import {NavLink} from "react-router-dom";
-import EpisodeDetailsPage from "../../pages/EpisodeDetailsPage/EpisodeDetailsPage";
-
 
 const Episode = ({episodes}) => {
 
