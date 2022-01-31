@@ -1,12 +1,12 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
+
 import {deleteCar, updateCar} from "../../store";
-import {useParams} from "react-router-dom";
 
-const Car = ({car:{id,model,price,year}}) => {
 
- const dispatch=useDispatch()
-// const {id}=useParams()
+const Car = ({car}) => {
+    const {id, model, price, year} = car
+    const dispatch = useDispatch()
     return (
         <div>
             <div>
@@ -14,9 +14,8 @@ const Car = ({car:{id,model,price,year}}) => {
                 <div>price:{price}</div>
                 <div>year:{year}</div>
             </div>
-            <button onClick={()=>dispatch(deleteCar({id}))}>Delete</button>
-            <button onClick={()=>dispatch(updateCar({id}))}>Update</button>
-            {console.log(id)}
+            <button onClick={() => dispatch(deleteCar({id}))}>Delete</button>
+            <button onClick={() => dispatch(updateCar({car}))}>Update</button>
         </div>
     );
 };
