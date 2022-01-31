@@ -12,7 +12,9 @@ const Episode = ({episodes}) => {
     characterId.push(characters.map(value => value.split('/').pop()))
 
     return (
+
         <div className={'episode'}>
+
             <h2>{name}</h2>
             <h2>{episode}</h2>
             <h3>{air_date}</h3>

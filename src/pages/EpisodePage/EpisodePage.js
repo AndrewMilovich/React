@@ -19,15 +19,16 @@ const EpisodePage = () => {
 
     return (
         <div>
+            <div > <h2 className={'headerPage'}>Rick and Morty episodes!</h2></div>
             <div className={'episodes'}>{episodes.map(episode => <Episode key={episode.id} episodes={episode} />)}</div>
 
-            <Link to={`/episodes/${+id -1}`}>
+            <div className={'buttonPage'}>
+                <Link to={`/episodes/${id >= 1 ? +id - 1 : 1}`}>
                 <button>prev</button>
             </Link>
-
-            <Link to={`/episodes/${+id + 1}`}>
-                <button>next</button>
-            </Link>
+                <Link to={`/episodes/${id <= 3 ? +id + 1 : 3}`}>
+                    <button>next</button>
+                </Link></div>
 
         </div>
     );

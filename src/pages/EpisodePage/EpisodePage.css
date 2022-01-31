@@ -1,21 +1,44 @@
-.episodes{
+.episodes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: center;
 }
-.episode{
+
+.headerPage {
+    margin: 0;
+    align-items: center;
+    background-color: silver;
+    height: 150px;
+    display: flex;
+    font-size: 35px;
+    align-content: center;
+    justify-content: center;
+}
+
+.episode {
     background-color: #c3c3e0;
     display: flex;
     box-sizing: border-box;
     border: 1px solid black;
     margin: 10px;
-    height: 260px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     padding: 10px;
     flex-direction: column;
     align-content: center;
     align-items: center;
     justify-content: flex-end;
+}
+button{
+
+    width: 90px;
+}
+.buttonPage {
+    margin: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }

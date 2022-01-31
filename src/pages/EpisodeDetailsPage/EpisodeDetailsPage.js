@@ -12,11 +12,18 @@ const[state,setState]=useState([])
 
     useEffect(()=>{
         charactersService.getById(characterId).then(value => setState([...value]))
-    },[])
+    },[characterId])
 
     return (
-        <div className={'characters'}>
-            {state.map(value => <Characters key={value.id} value={value} />)}
+        <div >
+            <div > <h2 className={'headerPage'}>Character  of this episode!</h2></div>
+            <div className={'characters'}>
+                {state.map(value => <Characters key={value.id} value={value} />)}
+            </div>
+
+
+
+
         </div>
     );
 };
