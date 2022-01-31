@@ -14,7 +14,10 @@
     "react-router-dom": "^6.2.1",
     "react-hook-form": "^7.25.3",
     "@reduxjs/toolkit": "^1.7.1",
-    "react-redux": "^7.2.6"
+    "react-redux": "^7.2.6",
+    "joi": "^17.6.0",
+    "joi-json": "^4.0.0",
+    "@hookform/resolvers": "^2.8.8"
 
   },
   "scripts": {
