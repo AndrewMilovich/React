@@ -1,28 +1,35 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
-
-import {addCar} from "../../store";
-import {CarValidator} from "../../validation/car.validator";
 import {joiResolver} from "@hookform/resolvers/joi";
 
+import { createCar, UpdateCar} from "../../store";
+import {CarValidator} from "../../validation/car.validator";
+
 const Form = () => {
+    const {register, handleSubmit, reset, setValue, formState: {errors}} = useForm({
+        resolver: joiResolver(CarValidator),
+        mode: 'onTouched'
+    })
 
-    const {register, handleSubmit, reset, setValue,formState: {errors}} = useForm({  resolver: joiResolver(CarValidator),
-        mode: 'onTouched'})
-
-    const {car} = useSelector((state) => state["carReducer"]);
+    const {car, carForUpdate} = useSelector((state) => state.cars);
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        setValue('model', car.model)
-        setValue('price', car.price)
-        setValue('year', car.year)
-    }, [car.id])
+        if (carForUpdate) {
+            setValue('model', carForUpdate.model)
+            setValue('price', carForUpdate.price)
+            setValue('year', carForUpdate.year)
+        }
+    }, [carForUpdate])
 
     const submit = (data) => {
-        dispatch(addCar({data, id: car.id}));
+        if (carForUpdate) {
+            dispatch(UpdateCar({id:carForUpdate.id, car:data}))
+        } else {
+        dispatch(createCar({data, id: car.id}));
+        }
         reset()
     }
 
@@ -35,7 +42,7 @@ const Form = () => {
                 <div><label>Price:<input type="text" {...register('price')}/></label></div>
                 <div>{errors.year && <span>{errors.year.message}</span>}</div>
                 <div><label>Year:<input type="text" {...register('year')}/></label></div>
-                <button>{car.id ? "Update" : "Create"}</button>
+                <button>{carForUpdate ? "Update" : "Create"}</button>
 
             </form>
         </div>
