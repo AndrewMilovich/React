@@ -19,20 +19,20 @@ const nameSlice = createSlice({
                 })
             },
             deleteName: (state, action) => {
-                let filter = state.names.filter(name => name.id !== action.payload.id);
-                let length = filter.filter(value => value.status === true).length;
+                const filter = state.names.filter(name => name.id !== action.payload.id);
+                const length = filter.filter(value => value.status === true).length;
                 state.names = filter
 
                 counter: state.counter--
 
-                if (state.names.status === true) {
+                if (state.names.status) {
                     counter:state.checkCounter--
                 } else {
                     state.checkCounter = length
                 }
             },
             changeStatus: (state, action) => {
-                let find = state.names.find(name => name.id === action.payload.id);
+                const find = state.names.find(name => name.id === action.payload.id);
                 find.status = !find.status
                 if (find.status === true) {
                     checkCounter:state.checkCounter++
