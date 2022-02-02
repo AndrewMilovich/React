@@ -1,0 +1,9 @@
+.name {
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+}
