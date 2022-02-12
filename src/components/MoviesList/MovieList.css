@@ -1,0 +1,64 @@
+.filmBox {
+    height: 400px;
+    width: 240px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+}
+
+.blockFilms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.filmBox img{
+    filter: drop-shadow(5px 5px 10px #666);
+    box-shadow: 10px 5px 5px #2e2828;
+}
+.filmBox img:hover {
+    width: 245px;
+    transition: 2s;
+
+}
+
+.buttons {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 20px;
+}
+
+.pages {
+    margin: 20px 0;
+}
+
+.page, .current-page {
+    border: 1px solid lightgray;
+    border-radius: 100%;
+    padding: 5px 10px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.current-page {
+    border: 2px solid gray;
+    font-weight: 700;
+}
+
+
+a {
+    text-decoration: none;
+    color: #2a0404;
+}
+
+.filmName {
+    align-items: flex-start;
+    font-family: "Segoe Print";
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: -20px;;
+}
+

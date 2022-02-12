@@ -1,0 +1,59 @@
+.header {
+    align-items: center;
+    height: 150px;
+    width: 100%;
+    background: linear-gradient(-45deg, #0e37a1, #092d8a, #160050, #021746);
+    font-family: "Segoe Print";
+    font-size: 70px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.theme{
+    background: linear-gradient(-45deg, #faf9f7, #2153ce, #00abe8, #1f4cbd);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.active{
+    transition: all 3s ;
+    text-decoration: #d9bd89;
+    color: #ce8e8e;
+   background: #03033f;
+}
+.active a{
+    color: #eed6af;
+}
+.logo{
+    bottom: -45px;
+    background: url("./image/logo.png") no-repeat;
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+    position: absolute;
+    left: -35px;
+}
+
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.container {
+    text-align: center;
+    margin-top: -60px;
+    display: flex;
+    column-gap: 50px;
+}

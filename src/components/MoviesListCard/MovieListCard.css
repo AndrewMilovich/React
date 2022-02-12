@@ -1,0 +1,43 @@
+.nameFilm {
+    font-family: "Segoe Print";
+    font-size: 70px;
+}
+
+.overview {
+    font-family: Impact;
+    font-size: 25px;
+}
+
+.release_date {
+    color: goldenrod;
+    font-size: 30px;
+}
+
+.infoFilm {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.filmImage {
+    border-radius: 10%;
+}
+
+.filmContainer {
+    display: flex;
+    column-gap: 50px;
+}
+
+.genresName {
+    display: flex;
+    column-gap: 10px;
+    color: goldenrod;
+    font-size: 30px;
+}
+
+.leftBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

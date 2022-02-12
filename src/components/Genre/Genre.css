@@ -1,0 +1,9 @@
+.genre{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    justify-content: center;
+    margin: 15px;
+    width: 125px;
+}
