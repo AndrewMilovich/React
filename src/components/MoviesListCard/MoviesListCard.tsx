@@ -3,24 +3,23 @@ import {useParams} from "react-router";
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {getInformationByFilm} from "../../store";
-import {IMovieDetailInterface} from "../../interfaces/movieDetail.interface";
+import {IMovieDetailInterface} from "../../interfaces";
 import {urls} from "../../constants";
 import './MovieListCard.css'
 import StarsRating from "../StarsRating/StarsRating";
 
-
 const MoviesListCard: FC = () => {
 
     const {data} = useAppSelector(state => state.movieReducer);
-
     const {id} = useParams()
-
     const dispatch = useAppDispatch();
+
     useEffect(() => {
         if (id != null) {
             dispatch(getInformationByFilm(id))
         }
     }, [id])
+
     const {
         original_title,
         poster_path,
@@ -34,6 +33,7 @@ const MoviesListCard: FC = () => {
 
     return (
         <div>
+
             <div className={'filmContainer'}>
                 <div className={'leftBox'}>
                     <div>
@@ -45,6 +45,7 @@ const MoviesListCard: FC = () => {
                     </div>
                     <div className={'release_date'}>Data:{release_date}</div>
                 </div>
+
                 <div className={'infoFilm'}>
                     <h1 className={'nameFilm'}>{original_title}</h1>
                     <div className={'genresName'}> Genres:{genres?.map((genre, index) => <span
@@ -53,11 +54,8 @@ const MoviesListCard: FC = () => {
                     <div><img width={'700px'} src={`${urls.image}/${backdrop_path}`} alt="movie"/></div>
                     <div className={'release_date'}>{tagline}</div>
                     <StarsRating/>
-
                 </div>
-
             </div>
-
         </div>
     );
 };

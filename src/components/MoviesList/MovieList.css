@@ -3,19 +3,19 @@
     width: 240px;
     box-sizing: border-box;
     cursor: pointer;
-
 }
 
 .blockFilms {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
 }
-.filmBox img{
+
+.filmBox img {
     filter: drop-shadow(5px 5px 10px #666);
     box-shadow: 10px 5px 5px #2e2828;
 }
+
 .filmBox img:hover {
     width: 245px;
     transition: 2s;
@@ -46,7 +46,6 @@
     border: 2px solid gray;
     font-weight: 700;
 }
-
 
 a {
     text-decoration: none;

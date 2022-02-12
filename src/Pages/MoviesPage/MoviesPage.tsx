@@ -1,8 +1,8 @@
-import React, {FC, useEffect, useRef} from 'react';
+import React, {FC, useEffect} from 'react';
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import MoviesList from "../../components/MoviesList/MoviesList";
-import {getAllMovies, getFilmsByName, setFilmName} from "../../store";
+import {getAllMovies, getFilmsByName,} from "../../store";
 import Button from "../../Button/Button";
 import GenreBadge from "../../components/GenreBadge/GenreBadge";
 import Search from '../../components/Search/Search';
@@ -29,8 +29,7 @@ const MoviesPage: FC = () => {
                     <h2 className={'release_date'}>Genre:</h2>
                     <GenreBadge/>
                 </div>
-
-                <div >
+                <div>
                     <Search/>
                     <div className={'blockFilms'}>
                         {filmName === '' && results.map(results => <MoviesList key={results.id} results={results}/>)}
@@ -40,7 +39,6 @@ const MoviesPage: FC = () => {
             </div>
             <Button/>
         </div>
-
     );
 };
 

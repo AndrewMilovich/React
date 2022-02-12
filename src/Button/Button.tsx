@@ -2,19 +2,19 @@ import React, {FC} from 'react';
 
 import {setCurrentPage} from "../store";
 import {useAppDispatch, useAppSelector} from "../hooks";
-
+import './Button.css'
 
 const Button: FC = () => {
-    const pages = [1, 2, 3, 4, 5]
 
     const {currentPage} = useAppSelector(state => state.movieReducer);
+
     const dispatch = useAppDispatch()
     return (
-        <div>
-            <button onClick={() => dispatch(setCurrentPage(currentPage - 1))}>➢</button>
-            {pages.map((page, index) => <button onClick={() =>
-                dispatch(setCurrentPage(page))}>key={index}, {page}</button>)}
-            <button onClick={() => dispatch(setCurrentPage(currentPage + 1))}>Next Page</button>
+        <div className={'buttons'}>
+            <button className={'pagination'} onClick={() => dispatch(setCurrentPage(currentPage - 1))}>Previous Page
+            </button>
+            <button className={'pagination'} onClick={() => dispatch(setCurrentPage(currentPage + 1))}>Next Page
+            </button>
         </div>
     );
 };

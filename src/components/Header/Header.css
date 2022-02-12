@@ -10,25 +10,43 @@
     justify-content: space-around;
 }
 
-.theme{
+.toggle {
+    position: absolute;
+    top: -55px;
+    right: 10px;
+}
+
+.switchToggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: center;
+    flex-direction: column-reverse;
+}
+
+.theme {
     background: linear-gradient(-45deg, #faf9f7, #2153ce, #00abe8, #1f4cbd);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
 }
-.active{
-    transition: all 3s ;
+
+.active {
+    transition: all 3s;
     text-decoration: #d9bd89;
     color: #ce8e8e;
-   background: #03033f;
+    background: #03033f;
 }
-.active a{
+
+.active a {
     color: #eed6af;
 }
-.logo{
+
+.logo {
     bottom: -45px;
     background: url("./image/logo.png") no-repeat;
     width: 120px;
@@ -37,7 +55,6 @@ body{
     position: absolute;
     left: -35px;
 }
-
 
 
 @keyframes gradient {
@@ -51,6 +68,7 @@ body{
         background-position: 0% 50%;
     }
 }
+
 .container {
     text-align: center;
     margin-top: -60px;

@@ -17,7 +17,6 @@ const StarsRating: FC = () => {
                             className={index <= (hover || rating) ? "off" : "on"}
                             onClick={() => setRating(index)}
                             onTouchMove={() => setHover(rating)}
-
                             onMouseEnter={() => setHover(index)}>
                             <span className={'stars'}>&#9733;</span>
                         </button>

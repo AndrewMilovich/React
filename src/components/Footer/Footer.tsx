@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import Switch from '../Switch/Switch';
+
 import './Footer.css'
 
 const Footer: FC = () => {

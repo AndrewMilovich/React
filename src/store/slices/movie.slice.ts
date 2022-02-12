@@ -4,11 +4,6 @@ import {IGenreProp, IMovie, IMovieDetailInterface, IResults} from "../../interfa
 
 import {genreService, movieServices} from "../../services";
 
-
-interface ISearch {
-    filmName: string
-}
-
 interface IMovieState {
     movies: IMovie,
     results: IResults[],
@@ -17,9 +12,8 @@ interface IMovieState {
     genre: IGenreProp[],
     genreId: string;
     data: {},
-    filmName:string
-    name:IResults[],
-
+    filmName: string
+    name: IResults[]
 }
 
 const initialState: IMovieState = {
@@ -30,9 +24,8 @@ const initialState: IMovieState = {
     genre: [],
     genreId: '',
     data: {},
-    name:[],
-    filmName:'',
-
+    name: [],
+    filmName: ''
 }
 
 export const getInformationByFilm = createAsyncThunk(
@@ -57,10 +50,10 @@ export const getAllGenres = createAsyncThunk(
 export const getFilmsByName = createAsyncThunk(
     'movieSlice/getAllMovies',
     async (name: string, {dispatch, getState}) => {
-        const state=getState() as { movieReducer: IMovieState };
-        const {data}=await  movieServices.getMovieByName(name,state.movieReducer.currentPage)
-        if(data.results){
-            dispatch(setFilm({name:data.results}))
+        const state = getState() as { movieReducer: IMovieState };
+        const {data} = await movieServices.getMovieByName(name, state.movieReducer.currentPage)
+        if (data.results) {
+            dispatch(setFilm({name: data.results}))
         }
     }
 )
@@ -85,9 +78,9 @@ const moviesSlice = createSlice(
                 state.results = action.payload.results
                 state.totalPage = action.payload.totalPages
             },
-            setCurrentPage: (state, action:PayloadAction<number>) => {
+            setCurrentPage: (state, action: PayloadAction<number>) => {
                 if (state.currentPage >= 1 && state.currentPage <= state.totalPage) {
-                    state.currentPage=action.payload
+                    state.currentPage = action.payload
                 } else if (state.currentPage < 1) {
                     state.currentPage = 1
                 } else if (state.currentPage > state.totalPage) {
@@ -109,8 +102,8 @@ const moviesSlice = createSlice(
                 }
 
             },
-            setFilmName:(state, action:PayloadAction<string>)=>{
-                state.filmName=action.payload
+            setFilmName: (state, action: PayloadAction<string>) => {
+                state.filmName = action.payload
             },
             setFilm: (state, action: PayloadAction<{ name: IResults[] }>) => {
                 if (action.payload.name) {
@@ -128,12 +121,11 @@ const movieReducer = moviesSlice.reducer
 
 export default movieReducer
 
-
 export const {
     setMovies,
     setCurrentPage,
     setGenre,
     setMovieGenre,
     getMovieInformation,
-    setFilm,setFilmName
+    setFilm, setFilmName
 } = moviesSlice.actions

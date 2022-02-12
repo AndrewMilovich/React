@@ -1,11 +1,12 @@
 import React, {FC} from 'react';
 import {Link} from "react-router-dom";
 
-import {IResults} from "../../interfaces/movie.interface";
+import {IResults} from "../../interfaces";
 import {urls} from "../../constants";
 import './MovieList.css'
 
 const MoviesList: FC<{ results: IResults }> = ({results}) => {
+
     const {id, title, poster_path} = results;
 
     return (

@@ -7,7 +7,6 @@ import Genre from "../Genre/Genre";
 const GenreBadge: FC = () => {
 
     const {genre} = useAppSelector(state => state.movieReducer);
-
     const dispatch = useAppDispatch()
 
     useEffect(() => {
