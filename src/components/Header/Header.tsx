@@ -12,7 +12,7 @@ const Header: FC = () => {
             <div>
 
                 <h1 className={'header'}>
-                    <div className={'switch'}><Link to={'movies/1'}>
+                    <div className={'switch'}><Link to={'/'}>
                         <div className={'logo'}></div>
                     </Link></div>Film Collapse
                     <div className={'user'}><UserInfo/></div>

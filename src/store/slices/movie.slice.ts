@@ -32,8 +32,12 @@ export const getInformationByFilm = createAsyncThunk(
     'movieSlice/getFilm',
     async (movie_id: string, {dispatch}) => {
         const {data} = await movieServices.getMovieById(movie_id)
-        if (data) {
-            dispatch(getMovieInformation({data}))
+        try {
+            if (data) {
+                dispatch(getMovieInformation({data}))
+            }
+        } catch (e: any) {
+            return e.messages
         }
     }
 )
@@ -42,18 +46,27 @@ export const getAllGenres = createAsyncThunk(
     'movieSlice/getAllGenres',
     async (_, {dispatch}) => {
         const {data} = await genreService.getGenres()
-        if (data.genres) {
-            dispatch(setGenre({genre: data.genres}))
+        try {
+            if (data.genres) {
+                dispatch(setGenre({genre: data.genres}))
+            }
+        } catch (e: any) {
+            return e.messages
         }
     }
 )
+
 export const getFilmsByName = createAsyncThunk(
     'movieSlice/getAllMovies',
     async (name: string, {dispatch, getState}) => {
         const state = getState() as { movieReducer: IMovieState };
         const {data} = await movieServices.getMovieByName(name, state.movieReducer.currentPage)
-        if (data.results) {
-            dispatch(setFilm({name: data.results}))
+        try {
+            if (data.results) {
+                dispatch(setFilm({name: data.results}))
+            }
+        } catch (e: any) {
+            return e.messages
         }
     }
 )
@@ -63,8 +76,12 @@ export const getAllMovies = createAsyncThunk(
     async (currentPage: number, {dispatch, getState}) => {
         const state = getState() as { movieReducer: IMovieState };
         const {data} = await movieServices.getMovies(currentPage, state.movieReducer.genreId)
-        if (data.results && data.total_pages) {
-            dispatch(setMovies({results: data.results, totalPages: data.total_pages}))
+        try {
+            if (data.results && data.total_pages) {
+                dispatch(setMovies({results: data.results, totalPages: data.total_pages}))
+            }
+        } catch (e: any) {
+            return e.messages
         }
     },
 )
