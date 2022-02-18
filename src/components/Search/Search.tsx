@@ -20,13 +20,16 @@ const Search: FC = () => {
         return (
             <div>
                 <div className={'search'}>
-                    <form onSubmit={submit}>
+                    <form className={'search'} onSubmit={submit}>
                         <div>
                             <input className={'searchInput'} type="search" placeholder={'Find film by name...'}
                                    ref={search}/>
                         </div>
+                        <div>
+                            <button className={'buttonInput'}>Find</button>
+                        </div>
                     </form>
-                    <button className={'buttonInput'}>Find</button>
+
                 </div>
             </div>
         );
